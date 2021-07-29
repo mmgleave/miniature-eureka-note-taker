@@ -50,6 +50,30 @@ app.post('/api/notes', (req, res) => {
     });
 });
 
+// DELETE for specific note
+app.delete('/api/notes/:id', (req, res) => {
+    const id = req.params.id;
+
+    fs.readFile(path.join(__dirname, './db/db.json'), 'utf8', (err, data) => {
+        if(err) {
+            res.status(500).json(err);
+        } else {
+            const prvNotes = JSON.parse(data);
+            const newNotes = prvNotes.filter((note) => {
+                return note.id != id;
+            });
+
+            fs.writeFile(path.join(__dirname, './db/db.json'), JSON.stringify(newNotes), (err) => {
+                if(err) {
+                    res.status(500).json(err);
+                } else {
+                    res.json(newNotes);
+                }
+            })
+        }
+    });
+});
+
 app.listen(PORT, () => {
     console.log('Server Running');
 });
