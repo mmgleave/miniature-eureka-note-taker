@@ -13,8 +13,8 @@ A Note Taking App
 - _[View Project on GitHub](http://github.com/mmgleave/miniature-eureka-note-taker)_
 
 ## Screenshots
-![Image-1](assets/images/note-screenshot1)
-![Image-1](assets/images/note-screenshot2)
+![Image-1](public/assets/images/note-screenshot1.png)
+![Image-1](public/assets/images/note-screenshot2.png)
 
 ## Usage
 Visit _[this site](https://min-eur-note-taker.herokuapp.com/notes)_ to use the app.
